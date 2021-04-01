@@ -1,0 +1,33 @@
+
+.Network Configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|Availability Zones
+(`AvailabilityZones`)|`**__Requires input__**`|The list of Availability Zones to use for the subnets in the VPC. The Quick Start uses two Availability Zones from your list and preserves the logical order you specify.|VPC CIDR
+(`VPCCIDR`)|`10.0.0.0/16`|The CIDR block for the VPC.|Private Subnet 1 CIDR
+(`PrivateSubnet1CIDR`)|`10.0.0.0/19`|The CIDR block for the private subnet located in Availability Zone 1.|Private Subnet 2 CIDR
+(`PrivateSubnet2CIDR`)|`10.0.32.0/19`|The CIDR block for the private subnet located in Availability Zone 2.|Public Subnet 1 CIDR
+(`PublicSubnet1CIDR`)|`10.0.128.0/20`|The CIDR block for the public (DMZ) subnet 1 located in Availability Zone 1.|Public Subnet 2 CIDR
+(`PublicSubnet2CIDR`)|`10.0.144.0/20`|The CIDR block for the public (DMZ) subnet 2 located in Availability Zone 2.
+|===
+.DRAGEN Quick Start Configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|Key Pair Name
+(`KeyPairName`)|`**__Requires input__**`|The name of an existing public/private key pair, which allows you to securely connect to your instance after it launches.|Instance Type
+(`InstanceType`)|`f1.4xlarge`|Amazon EC2 instance type for DRAGEN in the AWS Batch Compute Environment.|Spot Bid Percentage
+(`BidPercentage`)|`50`|The bid percentage set for your AWS Batch Managed Compute Environment with Spot Instances.|Min vCPUs
+(`MinvCpus`)|`0`|Minimum vCPUs for your AWS Batch Compute Environment. Recommend 0.|Max vCPUs
+(`MaxvCpus`)|`**__Requires input__**`|Maximum vCPUs for your AWS Batch Compute Environment.|Desired vCPUs
+(`DesiredvCpus`)|`0`|Desired vCPUs for your AWS Batch Compute Environment. Recommend the same number as MinvCpus for cost-optimization.|Genomics Data Bucket
+(`GenomicsS3Bucket`)|`**__Requires input__**`|S3 bucket name for the bucket to which you'll read and write genomics data.|AWS Batch Retry Number
+(`RetryNumber`)|`1`|Retry number for an AWS Batch job.
+|===
+.AWS Quick Start Configuration
+[width="100%",cols="16%,11%,73%",options="header",]
+|===
+|Parameter label (name) |Default value|Description|Quick Start S3 Bucket Name
+(`QSS3BucketName`)|`aws-quickstart`|S3 bucket name for the Quick Start assets. Quick Start bucket name can include numbers, lowercase letters, uppercase letters, and hyphens (-). It cannot start or end with a hyphen (-).|Quick Start S3 bucket region
+(`QSS3BucketRegion`)|`us-east-1`|The AWS Region where the Quick Start S3 bucket (QSS3BucketName) is hosted. When using your own bucket, you must specify this value.|Quick Start S3 Key Prefix
+(`QSS3KeyPrefix`)|`quickstart-illumina-dragen/`|S3 key prefix for the Quick Start assets. Quick Start key prefix can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slash (/).
+|===
